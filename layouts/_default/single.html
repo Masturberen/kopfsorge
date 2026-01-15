@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article>
+  <h2>{{ .Title }}</h2>
+  <p><small>{{ .Date.Format "02-01-2006" }}</small></p>
+
+  {{ if .Params.tags }}
+    <p>
+      Tags:
+      {{ range .Params.tags }}
+        <a href="/tags/{{ . | urlize }}/">#{{ . }}</a>
+      {{ end }}
+    </p>
+  {{ end }}
+
+  {{ if .Params.categories }}
+    <p>
+      Categorieën:
+      {{ range .Params.categories }}
+        <a href="/categories/{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+    </p>
+  {{ end }}
+
+  <hr>
+  {{ .Content }}
+</article>
+{{ end }}

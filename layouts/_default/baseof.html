@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<div id="matrix"></div>
+<script>
+(function () {
+  const matrix = document.getElementById("matrix");
+  const chars = "01░▒▓アイウエオカキクケコ";
+  const fontSize = 14;
+  const cols = Math.floor(window.innerWidth / fontSize);
+  let drops = Array(cols).fill(0);
+
+  function draw() {
+    let output = "";
+    for (let i = 0; i < cols; i++) {
+      const char = chars[Math.floor(Math.random() * chars.length)];
+      output += char + " ";
+      drops[i] = drops[i] > window.innerHeight / fontSize ? 0 : drops[i] + 1;
+    }
+    matrix.textContent = output;
+  }
+
+  setInterval(draw, 120);
+})();
+</script>
+
+<body>
+  <div class="container">
+<header>
+  <h1>{{ .Site.Title }}</h1>
+  <p>{{ .Site.Params.description }}</p>
+<pre class="ascii void flicker">
+</pre>
+
+  <nav>
+    <a href="/">Home</a> |
+    <a href="/posts/">Posts</a> |
+    <a href="/music/">Music</a>
+  </nav>
+</header>
+
+    {{ block "main" . }}{{ end }}
+
+    <footer>
+      © {{ now.Year }} Honingpot — static & self-hosted
+    </footer>
+  </div>
+</body>
+</html>

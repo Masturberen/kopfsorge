@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+<section class="shrine">
+
+<pre class="ascii void flicker">
+██╗  ██╗ ██████╗ ██████╗ ███████╗███████╗ ██████╗ ██████╗  ██████╗ ███████╗
+██║ ██╔╝██╔═══██╗██╔══██╗██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔════╝ ██╔════╝
+█████╔╝ ██║   ██║██████╔╝█████╗  ███████╗██║   ██║██████╔╝██║  ███╗█████╗  
+██╔═██╗ ██║   ██║██╔═══╝ ██╔══╝  ╚════██║██║   ██║██╔══██╗██║   ██║██╔══╝  
+██║  ██╗╚██████╔╝██║     ██╗	███████║╚██████╔╝██║  ██║╚██████╔╝███████╗
+╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝	╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+
+            E N T E R   T H E   V O I D
+
+<audio autoplay loop preload="auto"
+  onloadeddata="
+    this.volume=0;
+    let v=0;
+    let fade=setInterval(()=>{
+      if(v>=0.25){clearInterval(fade)}
+      else{v+=0.01; this.volume=v}
+    },80);
+  ">
+  <source src="/music/ambient-loop.mp3" type="audio/mpeg">
+</audio>
+
+</pre>
+
+<div class="signal">
+<pre>
+> boot sequence initialized
+> signal integrity ........ 98%
+> listening to the wire
+</pre>
+</div>
+
+<div class="fragments">
+  <p>the network does not forget</p>
+  <p>identity is a pattern</p>
+  <p>you are already connected</p>
+</div>
+
+<div class="gateway">
+  <a href="/posts/">[ enter signal ]</a>
+  <a href="/music/">[ descend into noise ]</a>
+</div>
+
+<div class="whisper">
+<pre>
+[ do not look for meaning ]
+[ let it emerge            ]
+</pre>
+</div>
+
+</section>
+
+{{ end }}
