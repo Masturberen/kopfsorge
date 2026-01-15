@@ -1,7 +1,10 @@
 backend:
   name: github
-  repo: Masturberen/JOUW_REPO
+  repo: Masturberen/kopfsorge
   branch: main
+  base_url: https://github.com
+  auth_endpoint: /login/oauth/authorize
+  app_id: Iv23lifbpIgeTnTUqsiz
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
@@ -15,43 +18,14 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
-        required: false
-      - label: "Categories"
-        name: "categories"
-        widget: "list"
-        required: false
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "music"
-    label: "Music"
+    label: "Music / Mixtapes"
     folder: "content/music"
     create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-backend:
-  name: github
-  repo: Masturberen/Kopfsorge CMS
-  branch: main
-  client_id: Iv23lifbpIgeTnTUqsiz
-
-media_folder: "static/uploads"
-public_folder: "/uploads"
-
-site_url: https://blog.honingpot.online
-
-collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "content/posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Audio file", name: "audio", widget: "file", media_library: { allow_multiple: false } }
+      - { label: "Description", name: "body", widget: "markdown" }
