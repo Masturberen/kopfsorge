@@ -2,20 +2,6 @@ backend:
   name: github
   repo: Masturberen/kopfsorge
   branch: main
-
-media_folder: "static/uploads"
-public_folder: "/uploads"
-
-site_url: https://blog.honingpot.online
-logo_url: https://blog.honingpot.online/favicon.ico
-
-collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "content/posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+  client_id: Ov23lirOHk3Jiec8qwpX
+  client_secret: 50b4074b196e8d1c50c3b247a0961e7cddb8ad6c
+  auth_scope: repo
