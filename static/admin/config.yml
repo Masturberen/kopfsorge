@@ -1,14 +1,13 @@
 backend:
   name: github
   repo: Masturberen/kopfsorge
-  branch: master
-  auth_type: pkce
+  branch: main
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
 site_url: https://blog.honingpot.online
-display_url: https://blog.honingpot.online
+logo_url: https://blog.honingpot.online/favicon.ico
 
 collections:
   - name: "posts"
