@@ -1,13 +1,14 @@
 backend:
   name: github
   repo: Masturberen/kopfsorge
-  branch: main
-  base_url: https://github.com
-  auth_endpoint: /login/oauth/authorize
-  app_id: Iv23lifbpIgeTnTUqsiz
+  branch: master
+  auth_type: pkce
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
+
+site_url: https://blog.honingpot.online
+display_url: https://blog.honingpot.online
 
 collections:
   - name: "posts"
@@ -19,13 +20,3 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "music"
-    label: "Music / Mixtapes"
-    folder: "content/music"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Audio file", name: "audio", widget: "file", media_library: { allow_multiple: false } }
-      - { label: "Description", name: "body", widget: "markdown" }
